@@ -1,6 +1,6 @@
-# 🤖 KRishna Agentic Resume Screening App
+# 🤖 Krishna Agentic Resume Screening App
 
-An AI-powered resume screening application built by **KRishna** with a **multi-agent architecture**,
+An AI-powered resume screening application built by **Krishna** with a **multi-agent architecture**,
 using a **free, open-source local LLM (Llama 3.2 via Ollama)** — no paid API keys required.
 
 Upload a candidate's resume (PDF) and a job description, and get an instant intelligent
@@ -92,7 +92,7 @@ FastAPI Backend (:8000)
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/KRishna/agentic-resume-screening.git
+git clone https://github.com/krishna-ethara/agentic-resume-screening.git
 cd agentic-resume-screening
 ```
 
