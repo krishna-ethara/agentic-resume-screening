@@ -8,6 +8,7 @@ Endpoints:
 
 from fastapi import FastAPI, UploadFile, Form
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from app.parsepdf import parse_pdf
 from app.agents.resume_extractor_agent import analyze_resume
 from app.agents.jd_extractor_agent import analyze_jd
@@ -15,6 +16,14 @@ from app.agents.candidate_evaluation_agent import evaluate_candidate
 import json
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.post("/screening/")

@@ -1,8 +1,11 @@
+import os
 import streamlit as st
 import requests
 import pandas as pd
 import json
 from datetime import datetime
+
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 st.set_page_config(page_title="Resume Screening App", page_icon="📄", layout="wide")
 st.title("📄 Resume Screening App")
@@ -32,7 +35,7 @@ if st.button("🔍 Process Resume", type="primary"):
         with st.spinner("Analysing resume with AI... this may take 30-60 seconds."):
             try:
                 response = requests.post(
-                    "http://localhost:8000/screening/",
+                    f"{BACKEND_URL}/screening/",
                     files={"resume": uploaded_file},
                     data={"jd_text": jd_text},
                     timeout=120,
